@@ -63,5 +63,21 @@ public class Universidade {
 
         System.out.println();
 
+        Solicitacao solicitacao2 = reservaService.solicitarReserva(professores.get(1), laboratorios.get(0), "15/04/2024", LocalTime.of(11, 15));
+
+        if (solicitacao != null) {
+            System.out.println("\nProfessor, informe seu nome: " + solicitacao2.getProfessor().getNome());
+            System.out.println("Professor, informe qual laboratório deseja reservar: LAB" + solicitacao2.getLabId());
+            System.out.println("Professor, informe qual Data deseja reservar o laboratório: " + solicitacao2.getDate());
+            System.out.println("Horarios possiveis: " + solicitacao2.getHorariosDisponiveis() );
+            System.out.println("Professor informe o horário: " + solicitacao2.getHours());
+
+            SolicitacaoMarcacao(solicitacao2);
+        } else {
+            System.out.println("A reserva do laboratório não foi efetuada.");
+        }
+
+        System.out.println();
     }
-}
+
+    }
